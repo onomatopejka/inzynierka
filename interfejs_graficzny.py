@@ -1,46 +1,52 @@
 from tkinter import *
 from pathlib import Path
 from tkinter.font import Font
+import openpyxl
 
 
 def relative_to_assets1(path: str) -> Path:
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"D:\PyCharm\Tkinter-Designer\build\assets\frame0")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"assets/frame0")
     return ASSETS_PATH / Path(path)
 
 
 def relative_to_assets2(path: str) -> Path:
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"D:\PyCharm\Tkinter-Designer\build\assets\frame1")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"assets/frame1")
     return ASSETS_PATH / Path(path)
 
 
 def relative_to_assets3(path: str) -> Path:
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"D:\PyCharm\Tkinter-Designer\build\assets\frame2")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"assets/frame2")
     return ASSETS_PATH / Path(path)
 
 
 def relative_to_assets4(path: str) -> Path:
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"D:\PyCharm\Tkinter-Designer\build\assets\frame3")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"assets/frame3")
     return ASSETS_PATH / Path(path)
 
 def relative_to_assets5(path: str) -> Path:
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"D:\PyCharm\Tkinter-Designer\build\assets\frame4")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"assets/frame4")
     return ASSETS_PATH / Path(path)
 
 
 def relative_to_assets6(path: str) -> Path:
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"D:\PyCharm\Tkinter-Designer\build\assets\frame5")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"assets/frame5")
     return ASSETS_PATH / Path(path)
 
 
 def relative_to_assets7(path: str) -> Path:
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"D:\PyCharm\Tkinter-Designer\build\assets\frame6")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"assets/frame6")
+    return ASSETS_PATH / Path(path)
+
+def relative_to_assets8(path: str) -> Path:
+    OUTPUT_PATH = Path(__file__).parent
+    ASSETS_PATH = OUTPUT_PATH / Path(r"assets/frame8")
     return ASSETS_PATH / Path(path)
 
 
@@ -105,7 +111,7 @@ def create_interface1(root):
         74.0,
         201.0,
         anchor="nw",
-        text="Lorem ipsum dolor sit amet consectetur. Eget nec adipiscing ipsum amet nunc quis placerat morbi nibh. Vestibulum eu iaculis in consequat sollicitudin habitant bibendum tincidunt donec. Eleifend.",
+        text="Zdrowomix - Twoje Centrum Zdrowego Żywienia Rodziny! W tej innowacyjnej aplikacji znajdziesz wszystko, czego potrzebujesz do planowania żywienia dla swojej rodziny. Skutecznie, ekonomicznie i zero waste!",
         fill="#414141",
         font=("Inter Medium", 25 * -1),
         width="400"
@@ -185,9 +191,9 @@ def create_interface2(root):
         53.51141357421875,
         261.28826904296875,
         anchor="nw",
-        text="Lorem ipsum dolor sit amet consectetur. Erat amet est lectus a ultrices non at ornare neque. Lacus neque rhoncus laoreet.",
+        text="Odkryj sekrety zdrowego żywienia! Nasz Kalkulator Kaloryczny dostosowuje się do Twoich indywidualnych potrzeb - wprowadź wiek, płeć oraz poziom aktywności, a otrzymasz spersonalizowane wyniki, aby utrzymać równowagę kaloryczną. ",
         fill="#414141",
-        font=("Inter Medium", 17 * -1),
+        font=("Inter Medium", 16 * -1),
         width="200",
         justify="center"
     )
@@ -208,7 +214,7 @@ def create_interface2(root):
         image=button_image_2_1,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: switch_frame(interface5, interface2),
+        command=lambda: switch_frame(interface5, interface2), #tutaj
         relief="flat"
     )
     button_2.place(
@@ -231,9 +237,9 @@ def create_interface2(root):
         292.3638916015625,
         261.28826904296875,
         anchor="nw",
-        text="Lorem ipsum dolor sit amet consectetur. Erat amet est lectus a ultrices non at ornare neque. Lacus neque rhoncus laoreet.",
+        text="Odkryj przepisy, dzięki Twoim ulubionym produktom! Nasz Spis Produktów ułatwia planowanie żywienia rodziny - znajdź lub dodaj ulubione składniki, a szybko znajdziesz idealny przepis dopasowany do dostępnych produktów w Twoim domu. ",
         fill="#414141",
-        font=("Inter Medium", 17 * -1),
+        font=("Inter Medium", 16 * -1),
         width="200",
         justify="center"
     )
@@ -277,9 +283,9 @@ def create_interface2(root):
         531.21630859375,
         261.28826904296875,
         anchor="nw",
-        text="Lorem ipsum dolor sit amet consectetur. Erat amet est lectus a ultrices non at ornare neque. Lacus neque rhoncus laoreet.",
+        text="Zdrowe Wybory, Szczęśliwa Rodzina! Odkryj porady żywieniowe na naszej stronie, wspomagającej planowanie posiłków dla całej rodziny. Znajdziesz tu praktyczne wskazówki dotyczące zrównoważonej diety, dostosowane do różnych preferencji żywieniowych!",
         fill="#414141",
-        font=("Inter Medium", 17 * -1),
+        font=("Inter Medium", 16 * -1),
         width="200",
         justify="center"
     )
@@ -323,9 +329,9 @@ def create_interface2(root):
         769.6005859375,
         261.28826904296875,
         anchor="nw",
-        text="Lorem ipsum dolor sit amet consectetur. Erat amet est lectus a ultrices non at ornare neque. Lacus neque rhoncus laoreet.",
+        text="Odkryj skład!Na naszej stronie zaplanujesz zdrowe posiłki dla rodziny - wybierz produkt, a otrzymasz natychmiastowe informacje o kaloriach, białkach, tłuszczach i węglowodanach. Możesz błyskawicznie ocenić, czy produkt spełnia Twoje żywieniowe oczekiwania! ",
         fill="#414141",
-        font=("Inter Medium", 17 * -1),
+        font=("Inter Medium", 16 * -1),
         width="200",
         justify="center"
     )
@@ -396,9 +402,9 @@ def create_interface3(root):
         18.0,
         185.0,
         anchor="nw",
-        text="Oblicz swoje zapotrzebowanie kaloryczne  sit amet consectetur. Volutpat et viverra varius enim vel sodales. Quis ullamcorper laoreet sed maecenas. Id ac ",
+        text="Czy zastanawiasz się, ile kalorii Twoje ciało potrzebuje, aby osiągnąć optymalne zdrowie i energię? Nasz innowacyjny Kalkulator Zapotrzebowania Kalorycznego jest tu, aby Ci pomóc! Podaj swoje dane, w tym wiek, płeć i poziom aktywności fizycznej, a nasz kalkulator dostarczy Ci spersonalizowane wyniki, idealnie dostosowane do Twoich potrzeb.",
         fill="#414141",
-        font=("Inter SemiBold", 30 * -1),
+        font=("Inter SemiBold", 25 * -1),
         width="400"
     )
 
@@ -499,7 +505,7 @@ def create_interface3(root):
         466.0,
         71.0,
         anchor="nw",
-        text="Podaj imie:",
+        text="Podaj imię:",
         fill="#414141",
         font=("Inter Medium", 25 * -1)
     )
@@ -816,10 +822,18 @@ def create_interface5(root):
         fill="#414141",
         font=("Inter SemiBold", 40 * -1)
     )
+    dataframe = openpyxl.load_workbook("produkty.xlsx")
+    dataframe1 = dataframe.active
 
-    products = {"cytryna": ["dawd", "yviuj"], "jabłko": ["adwd", "kjhbk"], "cynamon": ["awd", "awd"],
-                "arbuz": ["awda", "ohih8oi"], "melon": ["dawd", "wadad"], 'sad': ["wad", "wda"],
-                'sadasd': ["wad", "awdwa"], 'asdawd': ["awd", "duabsuiok"]}
+    products = []
+
+    for row in range(2, dataframe1.max_row + 1):
+        products.append(dataframe1.cell(row=row, column=2).value)
+
+
+    # products = {"cytryna": ["dawd", "yviuj"], "jabłko": ["adwd", "kjhbk"], "cynamon": ["awd", "awd"],
+    #             "arbuz": ["awda", "ohih8oi"], "melon": ["dawd", "wadad"], 'sad': ["wad", "wda"],
+    #             'sadasd': ["wad", "awdwa"], 'asdawd': ["awd", "duabsuiok"], 'gowno': {"asd"}}
 
     product_listbox5 = Listbox(frame5, font=Font(size=30))
     scrollbar5 = Scrollbar(frame5, orient="vertical", command=product_listbox5.yview)
@@ -828,8 +842,8 @@ def create_interface5(root):
     product_listbox5.place(x=28, y=185, width=250, height=350)
     scrollbar5.place(x=265, y=185, height=350)
 
-    for product in products.keys():
-        product_listbox5.insert("end", product)
+    for product in products:
+        product_listbox5.insert("end", product),
 
     global button_image_4_5
     button_image_4_5 = PhotoImage(
@@ -839,7 +853,7 @@ def create_interface5(root):
         image=button_image_4_5,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_4 clicked"),
+        command=lambda: switch_frame(interface6, interface5),
         relief="flat"
     )
     button_4.place(
@@ -941,7 +955,7 @@ def create_interface6(root):
         image=button_image_3_6,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_3 clicked"),
+        command=lambda: print("klik"),
         relief="flat"
     )
     button_3.place(
@@ -955,7 +969,7 @@ def create_interface6(root):
         20.0,
         101.0,
         anchor="nw",
-        text="Sprawdź co jesz!",
+        text="Porady żywieniowe",
         fill="#414141",
         font=("Inter SemiBold", 40 * -1)
     )
@@ -1045,7 +1059,7 @@ def create_interface6(root):
         fill="#06982B",
         outline="")
 
-    products = {"cytryna": ["dawd", "yviuj"], "jabłko": ["adwd", "kjhbk"], "cynamon": ["awd", "awd"],
+    products = {"cytryna": ["kalorie: 123", ""], "jabłko": ["adwd", "kjhbk"], "cynamon": ["awd", "awd"],
                 "arbuz": ["awda", "ohih8oi"], "melon": ["dawd", "wadad"], 'sad': ["wad", "wda"],
                 'sadasd': ["wad", "awdwa"], 'asdawd': ["awd", "duabsuiok"]}
 
@@ -1059,7 +1073,7 @@ def create_interface6(root):
     for product in products.keys():
         product_listbox6.insert("end", product)
 
-    product_info6 = Label(frame6, text="", font=("Inter SemiBold", 30), bg="#F3F3F3")
+    product_info6 = Label(frame6, text="", font=("Inter SemiBold", 20), bg="#F3F3F3")
     product_info6.place(x=270, y=185, width=200, height=200)
 
     product_listbox6.bind("<<ListboxSelect>>", update_product_info6)
@@ -1074,23 +1088,7 @@ def create_interface6(root):
         image=image_image_1_6
     )
 
-    canvas.create_text(
-        505.0,
-        118.0,
-        anchor="nw",
-        text="Przepis:",
-        fill="#414141",
-        font=("Inter Medium", 35 * -1)
-    )
 
-    przepis = canvas.create_text(
-        505.0,
-        158.0,
-        anchor="nw",
-        text="Linkdoprzepisuhwdpjp100%.com",
-        fill="#414141",
-        font=("Inter Medium", 25 * -1)
-    )
 
     return frame6
 
@@ -1101,7 +1099,30 @@ def create_interface7(root):
             selection = product_listbox7.get(product_listbox7.curselection())
             # Aktualizacja informacji o produkcie
             # Tutaj możesz zastąpić to rzeczywistymi danymi dla każdego produktu
-            product_info7.config(text=f"{selection}\n{products[selection][0]}")
+            product_info7.config(text=f"kcal {products[selection][0]}\nbiałka {products[selection][1]}g\ntłuszcze {products[selection][2]}g\nwęglowodany {products[selection][3]}g")
+        except:
+            pass
+
+    def search_record_7():
+        try:
+            #for product in products.keys():
+             #   product_listbox7.insert("end", product)
+            #products = {'gowno': []}
+            #
+            # product_listbox7.bind("<<ListboxSelect>>", update_product_info7)
+            # product_listbox7.selection_set(0)
+
+            print(products)
+            product_listbox7.clipboard_clear()
+            product_listbox7.insert("end", 'asda')
+
+            product_info7 = Label(frame7, text="", font=("Inter SemiBold", 30), bg="#F3F3F3")
+            product_info7.place(x=270, y=185, width=200, height=200)
+
+            product_listbox7.bind("<<ListboxSelect>>", update_product_info7)
+            product_listbox7.selection_set(0)
+
+            print("dsa")
         except:
             pass
 
@@ -1195,7 +1216,7 @@ def create_interface7(root):
         image=button_image_3_7,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_3 clicked"),
+        command=lambda: search_record_7(),#print("oandosadndd"),
         relief="flat"
     )
     button_3.place(
@@ -1222,9 +1243,18 @@ def create_interface7(root):
         370.0,
         image=image_image_1_7
     )
-    products = {"cytryna": ["dawd", "yviuj"], "jabłko": ["adwd", "kjhbk"], "cynamon": ["awd", "awd"],
-                "arbuz": ["awda", "ohih8oi"], "melon": ["dawd", "wadad"], 'sad': ["wad", "wda"],
-                'sadasd': ["wad", "awdwa"], 'asdawd': ["awd", "duabsuiok"]}
+    # products = {"cytryna": ["dawd", "yviuj"], "jabłko": ["adwd", "kjhbk"], "cynamon": ["awd", "awd"],
+    #             "arbuz": ["awda", "ohih8oi"], "melon": ["dawd", "wadad"], 'sad': ["wad", "wda"],
+    #             'sadasd': ["wad", "awdwa"], 'asdawd': ["awd", "duabsuiok"]}
+
+    dataframe = openpyxl.load_workbook("produkty.xlsx")
+    dataframe1 = dataframe.active
+
+    products = {}
+
+    for row in range(2, dataframe1.max_row + 1):
+        #products.append(dataframe1.cell(row=row, column=2).value)
+        products[dataframe1.cell(row=row, column=2).value] = [dataframe1.cell(row=row, column=3).value, dataframe1.cell(row=row, column=4).value, dataframe1.cell(row=row, column=5).value, dataframe1.cell(row=row, column=6).value]
 
     product_listbox7 = Listbox(frame7, font=Font(size=30))
     scrollbar7 = Scrollbar(frame7, orient="vertical", command=product_listbox7.yview)
@@ -1243,6 +1273,184 @@ def create_interface7(root):
     product_listbox7.selection_set(0)
 
     return frame7
+
+#nowy frame porady żywnościowe
+def create_interface8(root):
+    def update_product_info8(event):
+        try:
+            selection8 = product_listbox6.get(product_listbox6.curselection())
+            # Aktualizacja informacji o produkcie
+            # Tutaj możesz zastąpić to rzeczywistymi danymi dla każdego produktu
+            product_info6.config(text=f"{selection8}\n{products[selection8][0]}")
+            canvas.itemconfig(przepis, text=f"{products[selection8][1]}")
+        except:
+            pass
+    frame6 = Frame(root, bg="#F3F3F3")
+    frame8 = Frame(root, bg="#F3F3F3")
+    frame8.pack(fill='both', expand=True)
+
+    canvas = Canvas(
+        frame8,
+        bg="#F3F3F3",
+        height=600,
+        width=1000,
+        bd=0,
+        highlightthickness=0,
+        relief="ridge"
+    )
+
+    canvas.place(x=0, y=0)
+    global button_image_1_8
+    button_image_1_8 = PhotoImage(
+        file=relative_to_assets8("button_1.png"))
+    button_1 = Button(
+        frame8,
+        image=button_image_1_8,
+        borderwidth=0,
+        highlightthickness=0,
+        command=lambda: switch_frame(interface2, interface8),
+        relief="flat"
+    )
+    button_1.place(
+        x=21.0078125,
+        y=28.71484375,
+        width=297.8369140625,
+        height=42.87109375
+    )
+    global button_image_2_8
+    button_image_2_8 = PhotoImage(
+        file=relative_to_assets5("button_2.png"))
+    button_2 = Button(
+        frame8,
+        image=button_image_2_8,
+        borderwidth=0,
+        highlightthickness=0,
+        command=lambda: switch_frame(interface2, interface8),
+        relief="flat"
+    )
+    button_2.place(
+        x=829.0,
+        y=18.0,
+        width=201.0,
+        height=177.0
+    )
+    global entry_image_1_8
+    entry_image_1_8 = PhotoImage(
+        file=relative_to_assets8("entry_1.png"))
+    entry_bg_1 = canvas.create_image(
+        578.5,
+        51.0,
+        image=entry_image_1_8
+    )
+    entry_1 = Entry(
+        frame8,
+        bd=0,
+        bg="#D9D9D9",
+        fg="#000716",
+        highlightthickness=0
+    )
+    entry_1.place(
+        x=500.0,
+        y=35.0,
+        width=157.0,
+        height=30.0
+    )
+    global button_image_3_8
+    button_image_3_8 = PhotoImage(
+        file=relative_to_assets5("button_3.png"))
+    button_3 = Button(
+        frame8,
+        image=button_image_3_8,
+        borderwidth=0,
+        highlightthickness=0,
+        command=lambda: print("button_3 clicked"),
+        relief="flat"
+    )
+    button_3.place(
+        x=672.0,
+        y=32.0,
+        width=157.0,
+        height=37.0
+    )
+    global image_image_1_8
+    image_image_1_8 = PhotoImage(
+        file=relative_to_assets8("image_1.png"))
+    image_1 = canvas.create_image(
+        774.0,
+        375.0,
+        image=image_image_1_8
+    )
+
+    canvas.create_text(
+        20.0,
+        101.0,
+        anchor="nw",
+        text="przeklinam to gowno",
+        fill="#414141",
+        font=("Inter SemiBold", 40 * -1)
+    )
+
+    products = {"gularz": ["przepis na gularz jest\n  barzo prosty \nwystarczy \n wpierdolić gularz ze \nsłoika do garnka \n i podgrzać ", "linkDoPrzepisGularz.com"], "jabłko": ["adwd", "kjhbk"], "cynamon": ["awd", "awd"],
+                "arbuz": ["awda", "ohih8oi"], "melon": ["dawd", "wadad"], 'sad': ["wad", "wda"],
+                'sadasd': ["wad", "awdwa"], 'asdawd': ["awd", "duabsuiok"]}
+
+    product_listbox8 = Listbox(frame8, font=Font(size=30))
+    scrollbar8 = Scrollbar(frame8, orient="vertical", command=product_listbox8.yview)
+    product_listbox8.config(yscrollcommand=scrollbar8.set, selectforeground='#06982B', selectbackground='#F3F3F3')
+
+    product_listbox8.place(x=28, y=185, width=250, height=350)
+    scrollbar8.place(x=265, y=185, height=350)
+
+    for product in products.keys():
+        product_listbox8.insert("end", product) #tutaj
+
+        product_listbox8 = Listbox(frame8, font=Font(size=30))
+        scrollbar8 = Scrollbar(frame8, orient="vertical", command=product_listbox8.yview)
+        product_listbox8.config(yscrollcommand=scrollbar8.set, selectforeground='#06982B', selectbackground='#F3F3F3')
+
+        product_listbox8.place(x=28, y=185, width=190, height=350)
+        scrollbar8.place(x=215, y=185, height=350)
+
+        for product in products.keys():
+            product_listbox8.insert("end", product)
+
+        product_listbox6 = Listbox(frame8, font=Font(size=30))
+        scrollbar8 = Scrollbar(frame8, orient="vertical", command=product_listbox8.yview)
+        product_listbox6.config(yscrollcommand=scrollbar8.set, selectforeground='#06982B', selectbackground='#F3F3F3')
+
+        product_listbox6.place(x=28, y=185, width=190, height=350)
+        scrollbar8.place(x=215, y=185, height=350)
+
+        for product in products.keys():
+            product_listbox6.insert("end", product)
+
+        product_info6 = Label(frame8, text="", font=("Inter SemiBold", 15))
+        product_info6.place(x=260, y=185, width=300, height=200)
+
+        product_listbox6.bind("<<ListboxSelect>>", update_product_info8)
+        product_listbox6.selection_set(0)
+
+
+        canvas.create_text(
+            505.0,
+            118.0,
+            anchor="nw",
+            text="Przepis:",
+            fill="#414141",
+            font=("Inter Medium", 35 * -1)
+        )
+
+        przepis = canvas.create_text(
+            505.0,
+            158.0,
+            anchor="nw",
+            text="",
+            fill="#414141",
+            font=("Inter Medium", 25 * -1)
+        )
+
+
+    return frame8
 
 
 # Funkcja do przełączania ramki
@@ -1268,15 +1476,18 @@ interface3.pack_forget()
 # Wynik BMI
 interface4 = create_interface4(window)
 interface4.pack_forget()
-
+#Spis produktow
 interface5 = create_interface5(window)
 interface5.pack_forget()
-
+#Sprawdź co jesz(baba z płotem)
 interface6 = create_interface6(window)
 interface6.pack_forget()
 
 interface7 = create_interface7(window)
 interface7.pack_forget()
+#przepisy
+interface8 = create_interface8(window)
+interface8.pack_forget()
 
 # Ustawienie domyślnego interfejsu
 switch_frame(interface1, interface2)
